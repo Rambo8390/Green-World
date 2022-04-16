@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+        <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link href= "/public/assets/main.css" rel="stylesheet" type="text/css" />
+    <link href= "/public/assets/style.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+    
+    
+
+</head>
+
+<body>
+
+    <header class="head">
+    
+        <div class="header-1">
+    
+            <div class="share">
+                <span> follow us : </span>
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+    
+            <div class="call">
+                <span> call us : </span>
+                <a href="#">+123-456-7890</a>
+            </div>
+         <% if(locals.user) {%>
+
+            <div class="call">
+                <a href="#">Welcome <%=locals.user.name%> to GreenWorld</a>
+            </div>
+
+            <div class="call">
+                <a href="/users/logout">Logout</a>
+            </div>
+            
+            <%} else {%>
+                <div class="call">
+                    <a href="users/signin">Sign In</a>
+                 </div>
+                 <div class="call">
+                    <a href="users/signup">Sign Up</a>
+                 </div>
+            <%}%>
+    
+        </div>
+    
+        <div class="header-2">
+    
+            <a href="/" class="logo"> <i class="fas fa-seedling"></i> GreenWorld </a>
+    
+            <form action="" class="search-bar-container">
+                <input type="search" id="search-bar" placeholder="search here...">
+                <label for="search-bar" class="fas fa-search"></label>
+            </form>
+    
+        </div>
+    
+        
+    
+    </header>
+    
+    
+    <section class="page">
+
+        <% for (var i =0; i < category.length;  i++ ) { %>
+            
+            <div id="container">
+
+                <!-- Start	Product details -->
+                <div class="product-details">
+                    <!-- 	Product Name -->
+                    <h1><%= category[i].name %></h1>
+                    <!-- 		<span class="hint new">New</span> -->
+                    <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
+                    <!-- 		the Product rating -->
+                    <span class="hint-star star">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </span>
+    
+    
+                    <!-- The most important information about the product -->
+                    <p class="information"><%= category[i].info %>
+                        
+                    </p>
+    
+                    <!-- 		Control -->
+                    <div class="control">
+    
+                        <!-- Start Button buying -->
+                        <button class="btn" onclick="location.href='/cart/houseplant/<%= category[i]._id %>/<%=locals.user._id%>';">
+                            <!-- 		the Price -->
+                            <span class="price"><%= category[i].price %>₹</span>
+                            <!-- 		shopping cart icon-->
+                            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                            <!-- 		Buy Now / ADD to Cart-->
+                            <span class="buy">Add to Cart</span>
+                        </button>
+                        <!-- End Button buying -->
+                        <!-- <a href="/cart/houseplant/?id=<%=category[i]._id%>&type=Post">Hi</a> -->
+                        
+                    </div>
+    
+                </div>
+    
+                <!-- 	End	Product details   -->
+    
+                <!-- 	Start product image & Information -->
+    
+                <div class="product-image">
+    
+                    <img src= "<%= category[i].img %>" alt="Omar Dsoky">
+
+                    <!-- product speciality -->
+                   
+                    <!-- 	product Information-->
+                    <div class="info">
+                    
+                        <h2>The Description</h2>
+                        <ul>
+                            <% for (var j =0; j < category[i].discription.length;  j++ ) { %>
+
+                            <li>
+                                <i class="fas fa-hand-point-right"></i>
+                                <strong><%= category[i].discription[j] %></strong>
+                            </li>
+
+                            <% } %>
+                        </ul>
+                        
+                        <h2>The Speciality</h2>
+                        <ul>
+                            <% for (var j =0; j < category[i].speciality.length;  j++ ) { %>
+
+                            <li>
+                                <i class="fas fa-hand-point-right"></i>
+                                <strong><%= category[i].speciality[j] %></strong>
+                            </li>
+
+                            <% } %>
+                           
+                        </ul>
+
+                    </div>
+                </div>
+    
+                <!--  End product image  -->
+            </div>
+    
+    
+         <% } %>
+
+        
+        
+    </section>
+
+    <!-- <form action="/category/save" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input type="text" name="info" placeholder="info">
+        <input type="text" name="price" placeholder="price">
+        <input type="text" name="img" placeholder="img">
+        <input type="text" name="speciality" placeholder="speciality">
+        <input type="text" name="discription" placeholder="discription">
+
+        <input type="submit" value="submit">
+
+    </form> -->
+
+
+
+</body>
+
+</html>

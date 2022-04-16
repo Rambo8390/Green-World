@@ -1,0 +1,241 @@
+html {
+    background-image: linear-gradient(246deg, rgba(234, 234, 234, 0.04) 0%, rgba(234, 234, 234, 0.04) 33.3%,rgba(69, 69, 69, 0.04) 33.3%, rgba(69, 69, 69, 0.04) 66.6%,rgba(189, 189, 189, 0.04) 66.6%, rgba(189, 189, 189, 0.04) 99.89999999999999%),linear-gradient(81deg, rgba(126, 126, 126, 0.05) 0%, rgba(126, 126, 126, 0.05) 33.3%,rgba(237, 237, 237, 0.05) 33.3%, rgba(237, 237, 237, 0.05) 66.6%,rgba(74, 74, 74, 0.05) 66.6%, rgba(74, 74, 74, 0.05) 99.89999999999999%),linear-gradient(14deg, rgba(3, 3, 3, 0.08) 0%, rgba(3, 3, 3, 0.08) 33.3%,rgba(156, 156, 156, 0.08) 33.3%, rgba(156, 156, 156, 0.08) 66.6%,rgba(199, 199, 199, 0.08) 66.6%, rgba(199, 199, 199, 0.08) 99.89999999999999%),linear-gradient(323deg, rgba(82, 82, 82, 0.06) 0%, rgba(82, 82, 82, 0.06) 33.3%,rgba(179, 179, 179, 0.06) 33.3%, rgba(179, 179, 179, 0.06) 66.6%,rgba(212, 212, 212, 0.06) 66.6%, rgba(212, 212, 212, 0.06) 99.89999999999999%),linear-gradient(32deg, rgba(70, 70, 70, 0.02) 0%, rgba(70, 70, 70, 0.02) 33.3%,rgba(166, 166, 166, 0.02) 33.3%, rgba(166, 166, 166, 0.02) 66.6%,rgba(53, 53, 53, 0.02) 66.6%, rgba(53, 53, 53, 0.02) 99.89999999999999%),linear-gradient(38deg, rgba(129, 129, 129, 0.09) 0%, rgba(129, 129, 129, 0.09) 33.3%,rgba(38, 38, 38, 0.09) 33.3%, rgba(38, 38, 38, 0.09) 66.6%,rgba(153, 153, 153, 0.09) 66.6%, rgba(153, 153, 153, 0.09) 99.89999999999999%),linear-gradient(63deg, rgba(51, 51, 51, 0.02) 0%, rgba(51, 51, 51, 0.02) 33.3%,rgba(12, 12, 12, 0.02) 33.3%, rgba(12, 12, 12, 0.02) 66.6%,rgba(158, 158, 158, 0.02) 66.6%, rgba(158, 158, 158, 0.02) 99.89999999999999%),linear-gradient(227deg, rgba(63, 63, 63, 0.03) 0%, rgba(63, 63, 63, 0.03) 33.3%,rgba(9, 9, 9, 0.03) 33.3%, rgba(9, 9, 9, 0.03) 66.6%,rgba(85, 85, 85, 0.03) 66.6%, rgba(85, 85, 85, 0.03) 99.89999999999999%),linear-gradient(103deg, rgba(247, 247, 247, 0.07) 0%, rgba(247, 247, 247, 0.07) 33.3%,rgba(93, 93, 93, 0.07) 33.3%, rgba(93, 93, 93, 0.07) 66.6%,rgba(208, 208, 208, 0.07) 66.6%, rgba(208, 208, 208, 0.07) 99%),linear-gradient(0deg, #0b91d7,#6efc29);
+  
+      font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+    }
+    
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+    }
+    
+    @font-face {
+        font-family: 'Shopper';
+        src: url('http://www.shopperfont.com/font/Shopper-Std.ttf');
+    }
+    
+    .shopper {
+      text-transform: lowercase;
+      font: 2em 'Shopper', sans-serif;
+      line-height: 0.5em;
+      display: inline-block;
+    }
+    
+    
+    
+    h1 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.5em;
+    }
+    
+    p {
+      font-size: 1.5em;
+      color: #8a8a8a;
+    }
+    
+    input {
+      border: 0.3em solid #bbc3c6;
+      padding: 0.5em 0.3em; 
+      font-size: 1.4em;
+      color: #161515;
+      text-align: center;
+    }
+    
+    img {
+      max-width: 9em;
+      width: 100%;
+      overflow: hidden; 
+      margin-right: 1em;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    .container {
+      max-width: 75em;
+      width: 95%;
+      margin: 40px auto;  
+      overflow: hidden;
+      position: relative;
+      
+      border-radius: 0.6em;
+      background: #ecf0f1;
+      box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+    }
+    
+    .heading {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+      color: #f7f7f7;
+      background: #3da82d;
+    }
+    
+    .cart {
+      margin: 2.5em;
+      overflow: hidden;
+    }
+    
+    .cart.is-closed {
+      height: 0;
+      margin-top: -2.5em;
+    }
+    
+    .table {
+      background: #ffffff;
+      border-radius: 0.6em;
+      overflow: hidden;
+      clear: both;
+      margin-bottom: 1.8em;
+    }
+    
+    
+    .layout-inline > * {
+      display: inline-block;
+    }
+    
+    .align-center {
+      text-align: center;
+    }
+    
+    .th {
+      background: #297b41;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    
+    .tf {
+      background: #297b41;
+      text-transform: uppercase;
+      text-align: right;
+      font-size: 1.2em;  
+    }
+    
+    .tf p {
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    .col {
+      padding: 1em;
+      width: 12%;
+    }
+    
+    .col-pro {
+      width: 44%;
+    }
+    
+    .col-pro > * {
+      vertical-align: middle;
+    }
+    
+    .col-qty {
+      text-align: center;
+      width: 17%;
+    }
+    
+    .col-numeric p {
+      font: bold 1.8em helvetica;
+    }
+    
+    .col-total p {
+      color: #12c8b1;
+    }
+    
+    .tf .col {
+      width: 20%;
+    }
+    
+    .row > div {
+      vertical-align: middle;
+    }
+    
+    .row-bg2 {
+      background: #f7f7f7;
+    }
+    
+    .visibility-cart {
+      position: absolute;
+      color: #fff;
+      top: 0.5em;
+      right: 0.5em;
+      font:  bold 2em arial;
+      border: 0.16em solid #fff;
+      border-radius: 2.5em;
+      padding: 0 0.22em 0 0.25em ;
+    }
+    
+    .col-qty > * {
+      vertical-align: middle; 
+    }
+    
+    .col-qty > input {
+      max-width: 2.6em;
+    }
+    
+    
+    a.qty {
+      width: 1em;
+      line-height: 1em;
+      border-radius: 2em;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+      background: #43ace3;  
+      color: #fff;
+    }
+    
+    a.qty:hover {
+      background: #3b9ac6;
+    }
+    
+    .btn {
+      padding: 10px 30px;
+      border-radius: 0.3em;
+      font-size: 1.4em;
+      font-weight: bold;
+      background: #43ace3;
+      color: #fff;
+      box-shadow: 0 3px 0 rgba(59,154,198, 1)
+    }
+    
+    .btn:hover {
+      box-shadow: 0 3px 0 rgba(59,154,198, 0)
+    }
+    
+    .btn-update {
+      float: right;
+      margin: 0 0 1.5em 0;
+    }
+    
+    .transition {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    @media screen and ( max-width: 755px) {
+      .container {
+        width: 98%;
+      }
+      
+      .col-pro {
+        width: 35%;
+      }
+      
+      .col-qty {
+        width: 22%;
+      }
+      
+      img {
+        max-width: 100%;
+        margin-bottom: 1em;
+      }
+    }
+    
+    @media screen and ( max-width: 591px) {
+      
+    }

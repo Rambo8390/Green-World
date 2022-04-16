@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/public/assets/cart.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+      <div class="container">
+        <div class="heading">
+          <h1>
+            <span class="shopper">
+                <i class="fas fa-seedling" style="color: yellow;"></i>
+            </span> <a href="/" style="text-decoration: none; color: white;">GreenWorld </a>
+          </h1>
+          
+          <a href="#" class="visibility-cart transition is-open">X</a>    
+        </div>
+        
+        <div class="cart transition is-open">
+          
+          <div class="table">
+            
+            <div class="layout-inline row th">
+              <div class="col col-pro">Product</div>
+              <div class="col col-price align-center "> 
+                Price
+              </div>
+              <div class="col col-qty align-center">QTY</div>
+              
+              <!-- <div class="col">VAT</div> -->
+              <div class="col">Total</div>
+            </div>
+            
+            
+            
+            <% for(let i = 0 ; i < items.cart.length ;i++){%>
+      
+                <div class="layout-inline row">
+      
+                    <div class="col col-pro layout-inline">
+                      <img src="<%= items.cart[i].img %>" alt="kitten" />
+                      <p> <%= items.cart[i].name %> </p>
+                    </div>
+                    
+                    <div class="col col-price col-numeric align-center ">
+                        
+                      <p><%= items.cart[i].price %></p>
+                    </div>
+            
+                    <div class="col col-qty  layout-inline">
+                      <a href="/cart/decrease/<%= items.cart[i]._id%>" class="qty qty-minus ">-</a>
+                        <input type="numeric" value="<%= items.cart[i].qty %>" />
+                      <a href="/cart/increase/<%= items.cart[i]._id%>" class="qty qty-plus">+</a>
+                    </div>
+                    
+                    <!-- <div class="col col-vat col-numeric">
+                      <p>£1.95</p>
+                    </div> -->
+                    <div class="col col-total col-numeric">
+                        <% let val =  items.cart[i].price  *  items.cart[i].qty  %>
+                      <p><%= val %></p>
+                    </div>  
+                    
+                    <div class="col col-total col-numeric">
+                      <% if(locals.user){ %>
+                      <a href="/cart/remove/<%= items.cart[i]._id%>/<%=locals.user._id%>">
+                          <i class="fas fa-trash" style="font-size: 20px;color: red;"></i>
+                      </a>
+                      <% }else{%>
+
+                        <a href="/users/signin">
+                          <i class="fas fa-trash" style="font-size: 20px;color: red;"></i>
+                        </a>
+
+                        <%}%>
+                      
+                    </div>
+                    
+                  
+                  </div>
+      
+                <%}%>
+            
+             
+        
+             <div class="tf">
+               <% var total = 0 %>
+                <div class="row layout-inline">
+                    <% for(let t = 0 ; t < items.cart.length ;t++){%>
+                        <% total += (items.cart[t].price  *  items.cart[t].qty) %>
+                        <%}%>
+                 <div >
+                   <p>Total : <%= total %></p>
+                 </div>
+                 <div class="col"></div>
+               </div>
+             </div>         
+        </div>
+          
+          <!-- <a href="/payment/pay/<%= total %>" class="btn btn-update">Buy Now</a> -->
+
+          <!-- <a href="/home/<%= total %>" class="btn btn-update">Buy Now</a> -->
+          <a href="/payment/pay/<%= total %>" class="btn btn-update">Buy Now</a>
+
+          <!-- <p>Total : <%= total %></p> -->
+        
+      </div>
+      
+      <!-- <script src="index.js"></script> -->
+        
+      
+      
+        
+      
+        
+
+  
+</body>
+</html>
