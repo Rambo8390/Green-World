@@ -21,38 +21,6 @@ router.post('/create-session' ,passport.authenticate(
 router.get('/logout',usersController.destroySession);
 
 
-// router.post('/create-session' ,function(req ,res , next) {
-//     console.log(req.body);
-//     passport.authenticate(
-//     'local',function(err , user , info)
-//     {
-//         console.log(user);
-//         if(err)
-//         {
-//             console.log(err);
-//             return
-//         }
-
-//         if(!user)
-//         {
-//             console.log("Hi1")
-//             console.log(user);
-//             console.log(info);
-//             return res.redirect('/users/signin');
-//         }
-
-//         req.logIn(user , function(err){
-//             if(err)
-//             {
-//                 console.log(err);
-//                 return;
-//             }
-
-//             return res.redirect('/');
-
-//         });
-//     })(req , res , next);
-// });
 
 
 module.exports = router;

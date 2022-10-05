@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema({
     timestamps :true
 });
 
-//Instance methods
+
 
 
 const User = mongoose.model('User' ,userSchema);

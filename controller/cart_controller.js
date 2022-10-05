@@ -7,7 +7,7 @@ const Cart = require('../model/cart')
 module.exports.carts = async function(req ,res){
     try{
         let userid = req.params.userid;
-        //  console.log(userid);
+        
         // req.flash('success', "welcome to cart");
         let items = await User.findById(userid).populate('cart');
        
@@ -55,15 +55,12 @@ module.exports.remove = async function(req , res){
 
     let id = req.params.id;
     let userid = req.params.userid;
-
-    // console.log(id);
-    // console.log(userid);
     
     let newuser = await User.updateOne(
         {_id : userid},
         {$pull :{ cart : id}}
     )
-    // console.log(newuser);
+    
     res.redirect('back');
 
 }
